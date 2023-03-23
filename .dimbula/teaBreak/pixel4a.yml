@@ -1,0 +1,28 @@
+device: Pixel 4a
+os-version: "13"
+step-wait-time: 2
+languages:
+  - en
+  - ja
+steps:
+  - name: Tap ToDo
+    tap: 0.571 0.920
+  - text: Go to the Bank
+  - name: Tap Add
+    tap: 0.894 0.541
+  - name: Tap ToDo
+    tap: 0.530 0.908
+  - text: Submit quote in the afternoon
+  - name: Tap Add
+    tap: 0.888 0.551
+  - name: Tap ToDo
+    tap: 0.648 0.925
+  - text: Meeting at 4pm
+  - name: Tap Add
+    tap: 0.886 0.545
+  - name: Done Submit quote in the afternoon
+    tap: 0.835 0.251
+  - name: Done Go to the Bank
+    tap: 0.884 0.168
+  - name: Done Meeting at 4pm
+    tap: 0.833 0.160

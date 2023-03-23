@@ -1,0 +1,39 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .github/**
+      - README.md
+      - LICENSE
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    paths-ignore:
+      - docs/**
+      - README.md
+      - LICENSE
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Kotlin
+        uses: fwilhe2/setup-kotlin@0.3.0
+      - uses: actions/cache@v3
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Build with Gradle
+        run: ./gradlew build
+      - uses: kunimasu-com/DIMBULA-E2E-test-trigger@main
+        with:
+          client-id: bWx7nS8Magkg5y1UuuaC
+          app-artifact-path: app/build/outputs/apk/debug/app-debug.apk
