@@ -35,5 +35,5 @@ jobs:
         run: ./gradlew build
       - uses: kunimasu-com/DIMBULA-E2E-test-trigger@main
         with:
-          client-id: bWx7nS8Magkg5y1UuuaC
+          client-id: IVShlfKrYB1y7N7AwFCD
           app-artifact-path: app/build/outputs/apk/debug/app-debug.apk
